@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #ffffff; color: #222; padding: 40px; }
+        .container { max-width: 700px; margin: 60px auto; text-align: center; }
+        h1 { color: #c00; font-size: 48px; margin-bottom: 10px; }
+        p { font-size: 18px; }
+        code { background:#f5f5f5; padding:2px 6px; border-radius:4px; font-family: Consolas, Monaco, monospace; }
+        @media (max-width: 480px) {
+            h1 { font-size: 36px; }
+            .container { padding: 0 16px; margin: 30px auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Erreur</h1>
+        <p>Page non disponible.</p>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur - Page Non Trouvée</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+        }
+        
+        .error-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .error-icon {
+            font-size: 120px;
+            color: #ff4757;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        .error-code {
+            font-size: 100px;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff4757, #ff3838);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+        }
+        
+        .error-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .error-message {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0 20px;
+        }
+        
+        .error-details {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+            border-left: 4px solid #ff4757;
+        }
+        
+        .error-details p {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #3742fa, #5352ed);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #5352ed, #3742fa);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .glitch {
+            position: relative;
+            animation: glitch 5s infinite;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: "ERROR";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            animation: glitch-top 1s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        }
+        
+        .glitch::after {
+            animation: glitch-bottom 1.5s infinite;
+            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+            -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        }
+        
+        .countdown {
+            margin-top: 25px;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #ff00ff, -0.05em -0.025em 0 #00ffff; }
+            14% { text-shadow: 0.05em 0 0 #ff00ff, -0.05em -0.025em 0 #00ffff; }
+            15% { text-shadow: -0.05em -0.025em 0 #ff00ff, 0.025em 0.025em 0 #00ffff; }
+            49% { text-shadow: -0.05em -0.025em 0 #ff00ff, 0.025em 0.025em 0 #00ffff; }
+            50% { text-shadow: 0.025em 0.05em 0 #ff00ff, 0.05em 0 0 #00ffff; }
+            99% { text-shadow: 0.025em 0.05em 0 #ff00ff, 0.05em 0 0 #00ffff; }
+            100% { text-shadow: -0.025em 0 0 #ff00ff, -0.025em -0.025em 0 #00ffff; }
+        }
+        
+        @media (max-width: 600px) {
+            .error-container {
+                padding: 25px;
+            }
+            
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-title {
+                font-size: 26px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        /* Effet de particules en arrière-plan */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Effet de particules -->
+    <div class="particles" id="particles"></div>
+    
+    <div class="error-container">
+        <div class="error-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        
+        <div class="error-code glitch">404</div>
+        
+        <h1 class="error-title">Oups ! Une erreur est survenue</h1>
+        
+        <div class="error-message">
+            La page que vous recherchez est introuvable ou une erreur s'est produite.
+            Veuillez vérifier l'URL ou réessayer ultérieurement.
+        </div>
+        
+        <div class="error-details">
+            <p><i class="fas fa-bug"></i> Code d'erreur: <strong>404_NOT_FOUND</strong></p>
+            <p><i class="fas fa-clock"></i> Heure: <span id="current-time">Chargement...</span></p>
+            <p><i class="fas fa-info-circle"></i> Statut: Service temporairement indisponible</p>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i> Retour
+            </button>
+            <a href="/" class="btn btn-secondary">
+                <i class="fas fa-home"></i> Accueil
+            </a>
+            <button class="btn btn-secondary" onclick="reloadPage()">
+                <i class="fas fa-redo"></i> Réessayer
+            </button>
+            <a href="mailto:support@example.com" class="btn btn-secondary">
+                <i class="fas fa-envelope"></i> Support
+            </a>
+        </div>
+        
+        <div class="countdown">
+            Redirection automatique dans <span id="countdown">10</span> secondes
+        </div>
+    </div>
+
+    <script>
+        // Afficher l'heure actuelle
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('fr-FR');
+            document.getElementById('current-time').textContent = timeString;
+        }
+        
+        // Compte à rebours pour redirection
+        let seconds = 10;
+        const countdownElement = document.getElementById('countdown');
+        const countdownInterval = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "/";
+            }
+        }, 1000);
+        
+        // Fonction pour retour en arrière
+        function goBack() {
+            window.history.back();
+        }
+        
+        // Fonction pour recharger la page
+        function reloadPage() {
+            window.location.reload();
+        }
+        
+        // Mettre à jour l'heure immédiatement et toutes les secondes
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        // Créer des particules en arrière-plan
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Taille aléatoire
+                const size = Math.random() * 10 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Position de départ aléatoire
+                particle.style.left = `${Math.random() * 100}vw`;
+                
+                // Animation delay aléatoire
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                // Durée d'animation aléatoire
+                const duration = Math.random() * 10 + 10;
+                particle.style.animationDuration = `${duration}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Créer les particules quand la page charge
+        window.onload = function() {
+            createParticles();
+            
+            // Effet de glitch aléatoire sur le titre
+            setInterval(() => {
+                const glitch = document.querySelector('.glitch');
+                glitch.style.animation = 'none';
+                setTimeout(() => {
+                    glitch.style.animation = 'glitch 5s infinite';
+                }, 50);
+            }, 5000);
+        };
+        
+        // Effet de frappe au clavier sur le code d'erreur (optionnel)
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'F5') {
+                event.preventDefault();
+                reloadPage();
+            }
+            
+            // Easter egg: appuyez sur "E" trois fois
+            if (event.key === 'e' || event.key === 'E') {
+                if (!window.eCount) window.eCount = 0;
+                window.eCount++;
+                
+                if (window.eCount === 3) {
+                    alert("🎮 Easter egg trouvé ! 🎮\nMode développeur activé!");
+                    document.body.style.background = "linear-gradient(135deg, #000000, #ff0000)";
+                    window.eCount = 0;
+                }
+                
+                setTimeout(() => {
+                    window.eCount = 0;
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
